@@ -1,0 +1,23 @@
+fun main() {
+    val frutas = mutableListOf("Maçã", "Banana", "Laranja", "Uva", "Pera", "Melancia")
+
+    println("Lista de compras inicial: $frutas")
+
+    while (frutas.isNotEmpty()) {
+
+        print("Digite o nome de uma fruta para remover: ")
+        val entrada = readLine()?.trim() ?: ""
+
+        val frutaEncontrada = frutas.find { it.equals(entrada, ignoreCase = true) }
+
+        if (frutaEncontrada != null) {
+            frutas.remove(frutaEncontrada)
+            println("Fruta foi retirada da lista!")
+            println("Lista atual: $frutas\n")
+        } else {
+            println("Fruta indisponível no nosso mercado.\n")
+        }
+    }
+
+    println("Lista de compras finalizada!")
+}
