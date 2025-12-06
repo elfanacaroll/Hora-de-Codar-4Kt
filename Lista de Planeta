@@ -1,0 +1,14 @@
+fun main() {
+    val planetas = listOf("Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno")
+
+    println("Planetas disponíveis: $planetas")
+    print("Digite o nome de um planeta: ")
+
+    val entrada = readLine()?.trim() ?: ""
+
+    if (planetas.any { it.equals(entrada, ignoreCase = true) }) {
+        println("O planeta \"$entrada\" está na lista!")
+    } else {
+        println("O planeta \"$entrada\" NÃO está na lista.")
+    }
+}
