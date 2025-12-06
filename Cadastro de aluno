@@ -1,0 +1,29 @@
+
+fun main() {
+
+        val alunos = mutableListOf<String>()
+
+        println("Cadastre os alunos. Para parar, digite: PARE")
+
+        while (true) {
+            print("Informe o nome do aluno: ")
+            val entrada = readLine() ?: ""
+            val texto = entrada.trim()
+
+            if (texto.equals("PARE", ignoreCase = true)) {
+                break
+            }
+
+            if (texto.isNotEmpty()) {
+                alunos.add(texto)
+                println("Aluno \"$texto\" cadastrado.")
+            } else {
+                println("Nome vazio — não foi cadastrado.")
+            }
+        }
+
+        println("\nLista de alunos cadastrados (${alunos.size}):")
+        for ((indice, nome) in alunos.withIndex()) {
+            println("${indice + 1}. $nome")
+        }
+    }
